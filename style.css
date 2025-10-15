@@ -223,6 +223,24 @@ header {
   padding: 10px;
 }
 
+/* Faz as animações AOS entrarem de mais longe (sem quebrar layout) */
+[data-aos="fade-up"] {
+  transform: translateY(120px);
+}
+
+[data-aos="fade-down"] {
+  transform: translateY(-120px);
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(-120px);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(120px);
+}
+
+
 /* ===== Responsividade ===== */
 @media (max-width: 767px) {
   .nav {
@@ -268,6 +286,10 @@ header {
 
 /* Tablet pra cima = menu aberto lado a lado com o botão */
 @media (min-width: 768px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
   .nav {
     display: flex !important;
   }
@@ -301,8 +323,54 @@ header {
 
   .img-drone {
     display: flex;
-    justify-content: center; /* centraliza horizontalmente */
-    align-items: center; /* centraliza verticalmente */
+    justify-content: center; 
+    align-items: center; 
     width: 50%;
   }
+
+  .textos h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hero-content {
+    text-align: left;
+    padding: 40px;
+  }
+
+  .textos {
+    font-size: 1.2rem;
+    padding: 2rem;
+  }
+
+  .textos h1 {
+    font-size: 2.2rem;
+  }
+
+  .textos p {
+    font-size: 1rem;
+  }
+
+  .botoes button {
+    height: 60px;
+    width: 250px;
+  }
+
+  .img-drone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+  .infos {
+    font-size: 1.2rem;
+    margin-left: 100px;
+    max-width: 350px;
+  }
+
 }
