@@ -244,15 +244,17 @@ header {
   padding-top: 20px;
   text-align: center; 
   & h2 {
-    margin-top: 80px;
+    margin-top: 20px;
   }
 }
 
 .sectionSobre {
-  height: 100vh;
+  height: 60vh;
   width: 100vw;
-  padding: 0 20px;
+  padding: 0 10px;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   display: flex;
   gap: 15px;
   flex-direction: column;
@@ -386,7 +388,7 @@ header {
   }
 
   .fotoPiloto {
-    width: 50%;
+    width: 30%;
   }
 
   .textoSobre {
