@@ -67,6 +67,7 @@ header {
   background: #a7a4a44c;
   color: rgb(6, 6, 6);
   position: fixed;
+  z-index: 2;
 }
 
 /* ===== Logo ===== */
