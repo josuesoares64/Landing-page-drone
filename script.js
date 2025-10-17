@@ -14,3 +14,4 @@ menuToggle.addEventListener("click", () => {
         easing: 'ease-out',
       });
     });
+    
