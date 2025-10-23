@@ -82,7 +82,7 @@ header {
   background: #a7a4a44c;
   color: rgb(6, 6, 6);
   position: fixed;
-  z-index: 2;
+  z-index: 100;
 }
 
 /* ===== Logo ===== */
@@ -101,6 +101,24 @@ header {
 }
 
 /* ===== Navegação ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: #a7a4a44c;
+  backdrop-filter: blur(10px);
+  transition: right 0.3s ease-in-out;
+  z-index: 99998; /* logo abaixo do header */
+}
+
+/* Quando o menu estiver aberto */
+.nav.active {
+  right: 0; /* desliza pra dentro da tela */
+}
+
+
 .nav ul {
   display: flex;
   gap: 10px;
@@ -113,6 +131,12 @@ header {
   font-weight: bold;
   transition: color 0.3s;
 }
+
+.menu-toggle {
+  position: relative;
+  z-index: 10000; /* acima do header e do resto */
+}
+
 
 .nav a:hover {
   color: #1aa61f;
@@ -141,7 +165,6 @@ header {
 
 /* ===== Ícone menu hamburguer ===== */
 .menu-toggle {
-  display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -186,21 +209,25 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover; /* o vídeo cobre toda a área */
-  z-index: -1; /* fica atrás do conteúdo */
+  z-index: 0 !important; 
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+  padding-top: 30px; 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 100%;
   height: 100%;
-  padding: 20px;
   background: rgba(0, 0, 0, 0.4);
 }
+
 
 body {
     margin: 0;
@@ -229,22 +256,13 @@ body {
     z-index: 1; 
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    padding: 0 20px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .sketchfab-embed-wrapper {
     width: 100%;
     max-height: 400px; 
-    margin-top: 20px; 
+    padding-top: 20px; 
     align-self: center;
+    position: relative;
+    z-index: 0 !important;
 }
 
 .sketchfab-embed-wrapper iframe {
@@ -253,18 +271,8 @@ body {
     display: block;
 }
 
-@media (max-width: 768px) {
-    .sketchfab-embed-wrapper {
-        max-height: 250px; 
-    }
-    
-    .sketchfab-embed-wrapper iframe {
-        height: 250px;
-    }
-}
-
 .textos {
-  margin-top: 60px;
+  margin-top: 10px;
   font-size: 0.8rem;
   padding: 1rem;
 }
@@ -630,7 +638,7 @@ h1 {
 }
 
 .sectionContato {
-  background-image: url('public/secao_contato.webp');
+  background-image: url('assets/secao_contato.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -715,10 +723,10 @@ footer {
 
 /* ===== Responsividade ===== */
 @media (max-width: 767px) {
-  .menu-toggle {
+     .menu-toggle {
         display: flex;
     }
-    
+
     /* Navegação mobile */
     .nav {
         position: fixed;
@@ -731,25 +739,23 @@ footer {
         transition: right 0.3s ease-in-out;
         z-index: 1000;
     }
-    
+
     .nav.active {
         right: 0;
     }
-    
+
     .nav ul {
         flex-direction: column;
         padding: 80px 20px 20px;
         gap: 20px;
         height: 100%;
     }
-    
+
     .nav a {
-        display: block;
         padding: 10px;
         border-bottom: 1px solid rgba(0,0,0,0.1);
     }
-    
-    /* Overlay quando menu está aberto */
+
     .nav.active::before {
         content: '';
         position: fixed;
@@ -782,24 +788,47 @@ footer {
 
 /* Tablet pra cima = menu aberto lado a lado com o botão */
 @media (min-width: 768px) {
-   .nav {
-        display: block !important;
-    }
-    
     .menu-toggle {
-        display: none !important;
-    }
-  .logo {
-    font-size: 1.2rem;
-  }
-
-  .nav {
-    display: flex !important;
-  }
-
-  .menu-toggle {
     display: none;
   }
+  
+  /* Transforma o menu mobile em menu desktop */
+  .nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    backdrop-filter: none;
+    display: block;
+  }
+  
+  .nav ul {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .nav a {
+    font-size: 1rem;
+  }
+  
+  .nav a:hover {
+    color: #1aa61f;
+  }
+  
+  /* Ajusta o botão de orçamento */
+  .btn-orcamento {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+    .btn-orcamento {
+        order: 2;
+        font-size: 1rem;
+    }
+
+    .nav {
+        order: 1;
+    }
 
   .btn-orcamento {
     order: 2;
@@ -881,7 +910,7 @@ footer {
   }
 
   .nav {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
 
   .logo {

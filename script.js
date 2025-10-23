@@ -12,36 +12,27 @@ document.addEventListener("DOMContentLoaded", function() {
 const menuToggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("nav");
 
-// Abrir/fechar menu
-menuToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    nav.classList.toggle("active");
-    menuToggle.classList.toggle("open");
+menuToggle.addEventListener("click", () => {
+  menuToggle.classList.toggle("open");
+  nav.classList.toggle("active");
 });
 
-// Fechar menu ao clicar nos links OU fora do menu
-document.addEventListener('click', (e) => {
-    const isClickInsideNav = nav.contains(e.target);
-    const isClickOnMenuToggle = menuToggle.contains(e.target);
-    const isClickOnNavLink = e.target.matches('#nav a');
-    
-    // Se clicou fora do menu E o menu está aberto
-    if (!isClickInsideNav && !isClickOnMenuToggle && nav.classList.contains('active')) {
-        nav.classList.remove("active");
-        menuToggle.classList.remove("open");
+// Fechar menu ao clicar em um link (mobile)
+const navLinks = document.querySelectorAll('.nav a');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    // Só fecha o menu se estiver no mobile (menu ativo)
+    if (nav.classList.contains('active')) {
+      menuToggle.classList.remove("open");
+      nav.classList.remove("active");
     }
-    
-    // Se clicou em um link do menu (seu comportamento atual)
-    if (isClickOnNavLink) {
-        nav.classList.remove("active");
-        menuToggle.classList.remove("open");
-    }
+  });
 });
 
-// Fechar menu ao redimensionar para desktop
+// Fechar menu ao redimensionar a janela para desktop
 window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        nav.classList.remove("active");
-        menuToggle.classList.remove("open");
-    }
+  if (window.innerWidth >= 768) {
+    menuToggle.classList.remove("open");
+    nav.classList.remove("active");
+  }
 });
