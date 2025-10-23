@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
     <meta name="description" content="Filmagens aéreas profissionais com drone FPV Avata 2 em Brasília e região. Ideal para casamentos, festas, esportes e obras, com imagens em 4K de alta qualidade.">
     <title>Filmagens com Drone FPV em Brasília - Matheus Hudson</title>
 </head>
@@ -83,9 +84,16 @@
       <p data-aos="fade-up">📍 Atendimento em todo o estado</p>
     </div>
 </div>
-    <div class="img-drone" data-aos="fade-left">
-        <img src="public/fundo_transparente.png" alt="">
-    </div>
+<model-viewer
+  src="assets/models/dji-avata2.glb"
+  alt="Drone DJI Avata 2 FPV"
+  auto-rotate
+  camera-controls
+  shadow-intensity="1"
+  style="width:100%; max-width:700px; height:500px; margin:auto; display:block;">
+</model-viewer>
+</section>
+
 </section>
 <section class="sectionSobreContainer" id="sectionSobre">
   <h2 data-aos="fade-down">Sobre</h2>
