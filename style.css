@@ -295,12 +295,12 @@ h1 {
 }
 
 .botoes a {
-  background: #1aa61f6d;
-  border: 1.8px solid #000;
+  background: #000;
+  border: 1.8px solid #d75413;
   padding: 10px;
   font-size: 0.8rem;
   border-radius: 6px;
-  color: white;
+  color: #d75413;
   cursor: pointer;
   transition: 0.3s;
 }
