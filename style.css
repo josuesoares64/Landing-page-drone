@@ -295,7 +295,7 @@ h1 {
 }
 
 .botoes a {
-  background: #000;
+  background: #36454f;
   border: 1.8px solid #d75413;
   padding: 10px;
   font-size: 0.8rem;
@@ -944,7 +944,6 @@ footer {
   }
 
   .botoes a {
-    color: #000;
     height: 60px;
     width: 250px;
   }
