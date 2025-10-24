@@ -296,7 +296,7 @@ h1 {
 
 .botoes a {
   background: #36454f;
-  border: 1.8px solid #d75413;
+  border: none;
   padding: 10px;
   font-size: 0.8rem;
   border-radius: 6px;
