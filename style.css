@@ -132,20 +132,20 @@ header {
   transition: color 0.3s;
 }
 
+.nav a:hover {
+  color: #d75413;
+}
+
 .menu-toggle {
   position: relative;
   z-index: 10000; /* acima do header e do resto */
 }
 
-
-.nav a:hover {
-  color: #1aa61f;
-}
-
 /* ===== Botão ===== */
 .btn-orcamento {
-  background: #1aa61f;
-  border: 1.8px solid #000;
+  background: #36454f;
+  border: none;
+  color: #d75413;
   padding: 10px;
   font-size: 0.8rem;
   border-radius: 10px;
@@ -154,13 +154,16 @@ header {
 }
 
 .btn-orcamento a {
-  color: rgb(13, 11, 11);
+  color: #d75413;
   text-decoration: none;
   font-weight: bold;
 }
 
 .btn-orcamento:hover {
-  background: #1aa61f6d;
+  transition: 0.5s ease-in-out;
+  background: #273137fc;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== Ícone menu hamburguer ===== */
@@ -306,7 +309,8 @@ h1 {
 }
 
 .botoes a:hover {
-  background: #1aa61fab;
+  transform: scale(1.05) !important;
+  background: #161a1d;
 }
 
 .infos {
@@ -404,6 +408,7 @@ h1 {
 .cardServico:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(177, 40, 40, 0.2);
+  transform: scale(1.05);
   padding: 5px;
   transition: all 0.3s ease;
 }
@@ -468,7 +473,7 @@ h1 {
 }
 
 .videoCard:hover, .imagemCard:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05) !important;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -504,13 +509,18 @@ h1 {
   display: block;
   margin: 0 auto;
   padding: 10px 20px;
-  background: #1aa61f;
-  color: #000;
-  border: 1px solid #000;
+  background: #36454f;
+  color: #d75413;
+  border: none;
   border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btPortfolio:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cardsDiferenciais {
@@ -538,6 +548,11 @@ h1 {
   & figcaption {
     color: white;
   }
+}
+
+.cardDiferenciais:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .SectionFAQ {
@@ -576,8 +591,8 @@ h1 {
 }
 
 .cardPergunta:hover {
-  border-color: #667eea;
   box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+  transform: scale(1.05) !important;
 }
 
 .cardPergunta summary {
@@ -633,7 +648,7 @@ h1 {
 }
 
 .cardPergunta[open] summary {
-  background: #667eea;
+  background: #273137fc;
   color: white;
 }
 
@@ -655,12 +670,12 @@ h1 {
   margin: 20px 0 ;
   width: 100%;
   & button {
-    background: #1aa61f6d;
-    border: 1.8px solid #000;
+    background: #273137fc;
+    border: none;
     padding: 10px;
     font-size: 0.8rem;
     border-radius: 15px;
-    color: white;
+    color: #d75413;
     cursor: pointer;
     transition: 0.3s;
     width: 200px;
@@ -668,17 +683,9 @@ h1 {
   }
 }
 
-.sketchfab-embed-wrapper {
-    width: 100%;
-    height: 60vh;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.sketchfab-embed-wrapper iframe {
-    width: 100%;
-    height: 50%;
-    display: block;
+.botoesContato button:hover {
+  transform: scale(1.05) !important;
+  background: #161a1d;
 }
 
 .contatoConteudo {
@@ -717,7 +724,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #667eea;
+  color: #d75413;
   text-decoration: underline;
 }
 
@@ -809,10 +816,6 @@ footer {
   
   .nav a {
     font-size: 1rem;
-  }
-  
-  .nav a:hover {
-    color: #1aa61f;
   }
   
   /* Ajusta o botão de orçamento */
