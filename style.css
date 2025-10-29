@@ -762,7 +762,7 @@ footer {
 
   /* Inverte a ordem no mobile -> menu primeiro, botão depois */
   .menu-toggle {
-    order: 1;
+    order: 3;
   }
 
   .btn-orcamento {
@@ -770,7 +770,7 @@ footer {
   }
 
   .nav {
-    order: 3;
+    order: 1;
   }
 
 /* Tablet pra cima = menu aberto lado a lado com o botão */
