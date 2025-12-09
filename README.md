@@ -36,14 +36,14 @@ Desenvolvida utilizando **HTML, CSS e JavaScript**, com foco em velocidade, desi
 ---
 
 ## 📂 Estrutura do Projeto
-
+``
 /Landing-page-drone
 │── index.html
 │── style.css
 │── script.js
 │── /img
 │── /assets
-
+``
 
 ---
 
